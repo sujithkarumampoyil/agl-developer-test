@@ -3,10 +3,14 @@ import { TestBed } from '@angular/core/testing';
 import { StoreService } from './store.service';
 
 describe('StoreService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+    let service: StoreService;
 
-  it('should be created', () => {
-    const service: StoreService = TestBed.get(StoreService);
-    expect(service).toBeTruthy();
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({});
+        service = TestBed.get(StoreService);
+    });
+
+    it('should create an instance of DataStore service', () => {
+        expect(service).toBeTruthy();
+    });
 });

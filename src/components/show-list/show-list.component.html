@@ -1,0 +1,9 @@
+<div *ngFor="let item of catsList | keyvalue">
+    <p>
+        {{item.key}}
+    </p>
+    <ul>
+        <li *ngFor="let name of item.value">{{name}}</li>
+    </ul>
+
+</div>
