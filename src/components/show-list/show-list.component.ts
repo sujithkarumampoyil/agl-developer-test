@@ -15,14 +15,20 @@ export class ShowListComponent implements OnInit, OnDestroy {
         private apiSvc: RestApiService
     ) { }
 
+    error: string; // Any error message to be displayed in case of API failure
     obsSubs: Subscription[] = [];  // Store all component subscriptions
-    catsList: CatsList[] = []; // catsList per gender for rendering the list in view
+    catsList: {[key: string]: CatsList[]}; // catsList per gender for rendering the list in view
 
     ngOnInit() {
         this.obsSubs.push(this.apiSvc.getPeople()
-        .subscribe((pArray: Person[]) => {
-            this.catsList = this.getPetsPerGenderList(pArray, 'Cat');
-        }));
+        .subscribe(
+            (pArray: Person[]) => {
+                this.catsList = this.getPetsPerGenderList(pArray, 'Cat');
+            },
+            (err) => {
+                this.error = `An internal server error occured. Please try again later.`;
+            }
+        ));
 
     }
 

@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    API_ROOT: ' http://agl-developer-test.azurewebsites.net'
+    API_ROOT: 'http://agl-developer-test.azurewebsites.net'
 };
 
 /*

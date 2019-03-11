@@ -24,4 +24,7 @@ describe('AppComponent', () => {
     it(`should check if 'show-list' element is present in the view`, () => {
         expect(fixture.debugElement.query(By.css('show-list'))).not.toBeNull();
     });
+    it(`should verify that there is only one 'show-list' element present in the view`, () => {
+        expect(fixture.debugElement.queryAll(By.css('show-list')).length).toEqual(1);
+    });
 });

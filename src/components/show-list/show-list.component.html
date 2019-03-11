@@ -1,4 +1,4 @@
-<div *ngFor="let item of catsList | keyvalue">
+<div class="list-section" *ngFor="let item of catsList | keyvalue">
     <p>
         {{item.key}}
     </p>
@@ -6,4 +6,7 @@
         <li *ngFor="let name of item.value">{{name}}</li>
     </ul>
 
+</div>
+<div class="error-section" *ngIf="error">
+    <h3 class=error-message>{{error}}</h3>
 </div>
