@@ -20,7 +20,7 @@ In case if you run into any issues, ensure you are using **Node 10.15.3** and **
 - run: `npm run start` to start a local server
 - run: `npm run start:dev-set-up` to start all the required watchers for development. (unit tests/ linting/ live server)
 
-> Development server will run on https://localhost:4200 by default.
+> Development server will run on http://localhost:4200 by default.
 
 **Environment Variables**
 
